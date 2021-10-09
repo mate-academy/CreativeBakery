@@ -1,0 +1,110 @@
+.contacts {
+  margin: 0 auto;
+  background-color: $colorCroissant;
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left {
+    padding: 40px 70px;
+  }
+
+  &__right {
+    height: 500px;
+    width: 100%;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    color: #fff;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    @include onDesktop {
+      padding: 0 68px 0;
+    }
+  }
+
+  &-list__title {
+    font-weight: 700;
+  }
+
+  &-list__link {
+    text-decoration: none;
+    color: $colorChocolate;
+  }
+
+  &-list__item {
+    position: relative;
+    margin-bottom: 9px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-list__item::before {
+    content: "";
+    position: absolute;
+    left: -13%;
+    top: 12%;
+    display: block;
+    width: 15px;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-list__item--geo::before {
+    background-image: url(../images/icon-geo.svg);
+  }
+
+  &-list__item--call::before {
+    background-image: url(../images/icon-call.svg);
+  }
+
+  &-list__item--mail::before {
+    position: abolute;
+    height: 30px;
+    width: 30px;
+    left: -16%;
+    background-image: url(../images/icon-mail.svg);
+  }
+
+  &__map {
+    display: none;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
