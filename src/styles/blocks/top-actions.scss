@@ -1,0 +1,13 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: $headerTopPaddingMob 0;
+  height: 64px;
+
+  @include onDesktop {
+    padding: $headerTopPadding 0;
+    height: 88px;
+  }
+}

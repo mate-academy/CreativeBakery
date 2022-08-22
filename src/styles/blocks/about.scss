@@ -1,0 +1,88 @@
+.about {
+  &__description {
+    @extend %body_text;
+    margin-bottom: 64;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__pair {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: block;
+
+    z-index: -1;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: translateY(24%);
+    right: 0;
+
+    @include onTablet {
+      transform: translateY(-26%);
+      left: 0;
+      right: 0;
+    }
+
+    @include onDesktop {
+      transform: translateY(-44%);
+      left: 28%;
+    }
+
+    @include onDesktopXL {
+      transform: translateY(-44%);
+      left: 27%;
+    }
+  }
+
+  &__statistic {
+    width: max-content;
+
+    @extend %large_text;
+    color: $cOrange;
+    margin-bottom: 8px;
+
+    cursor: pointer;
+
+    transition: animation $defDur;
+    animation: color 1s linear infinite alternate;
+
+    &:hover {
+      animation: scale 1s linear infinite alternate;
+    }
+  }
+
+  &__interpretation {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--on-tablet {
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+}

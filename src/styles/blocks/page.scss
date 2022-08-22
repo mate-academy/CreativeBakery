@@ -1,0 +1,125 @@
+.page {
+  scroll-behavior: smooth;
+
+  background-color: $cLightBlue;
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+
+    transform: translate(100%, -100%);
+
+    transition: transform $defDur;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+
+  &__header {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__section {
+    padding-top: 24px;
+    margin-bottom: 48px;
+
+    &:nth-child(1) {
+      @include onTablet {
+        margin-bottom: 128px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 154px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 72px;
+
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 349px;
+      }
+    }
+  }
+
+  &__section-title {
+    @extend %h2_mobile;
+
+    text-shadow: 0 2px 6px $cDarkOrange;
+
+    &:nth-child(1) {
+      margin-bottom: 32px;
+
+      @include onTablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__section-description {
+    @extend %body_text;
+    margin-bottom: 56px;
+
+    &:last-child {
+      margin-bottom: 64px;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 72px;
+      }
+    }
+  }
+
+  &__button {
+    position: fixed;
+    z-index: 99;
+
+    width: 45px;
+    height: 45px;
+
+    bottom: 10%;
+    right: 5%;
+
+    cursor: pointer;
+
+    opacity: 0.3;
+    transition: opacity 0.6s,
+      animation 0.6s,
+      transform 0.6s;
+    animation: transform 0.7s infinite ease-in;
+
+    &:hover {
+      opacity: 0.8;
+      animation: paused;
+      transform: scale(1.1);
+    }
+  }
+}
